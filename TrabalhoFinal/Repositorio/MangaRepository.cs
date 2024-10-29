@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Dapper.Contrib.Extensions;
+using Filmax.Repositorio.Interface;
 using FilMax.Entidade;
 using FilMax.Services;
 using Microsoft.Extensions.Configuration;
@@ -9,7 +10,7 @@ using System.Data.SQLite;
 
 namespace FilMax.Repositorio
 {
-    public class MangaRepository
+    public class MangaRepository : IMangaRepository
     {
 
         public readonly string ConnectionString;

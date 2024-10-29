@@ -1,4 +1,5 @@
 ﻿using Filmax.Entidade.DTO;
+using Filmax.Services.Interface;
 using FilMax.Entidade;
 using FilMax.Repositorio;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FilMax.Services;
 
-public class ClienteService
+public class ClienteService : IClienteService
 {
     public ClienteRepository repository { get; set; }
     public ClienteService(string _config)

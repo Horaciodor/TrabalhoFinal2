@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Filmax.Aplicação;
 using FilMax.Aplicação;
 using FilMax.Entidade;
 using FilMax.Services;
@@ -11,7 +12,7 @@ namespace FilMax.Controllers
 
     public class MangaController : ControllerBase
     {
-        private readonly TsukiService service;
+        private readonly ITsukiService service;
         private readonly IMapper _mapper;
         public MangaController(IConfiguration config, IMapper mapper)
         {

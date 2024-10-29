@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Filmax.Services.Interface;
 using FilMax.Entidade;
 using FilMax.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +11,7 @@ namespace FilMax.Controllers
 
     public class AutorController : ControllerBase
     {
-        private readonly AutorService _service;
+        private readonly IAutorService _service;
         private readonly IMapper _mapper;
         public AutorController(IConfiguration config, IMapper mapper)
         {

@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Filmax.Aplicação;
+using Filmax.Repositorio.Interface;
 using FilMax.Entidade;
 using FilMax.Repositorio;
 using FilMax.Services;
@@ -11,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace FilMax.Aplicação;
 
-public class TsukiService
+public class TsukiService : ITsukiService
 {
-    public MangaRepository _repository { get; set; }
+    public IMangaRepository _repository { get; set; }
 
     public TsukiService(string _config)
     {

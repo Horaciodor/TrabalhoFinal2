@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Filmax.Services;
+using Filmax.Services.Interface;
 using FilMax.Entidade;
 using FilMax.Entidade.DTO;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +11,7 @@ namespace ApiTsuki.Controllers;
 [Route("[controller]")]
 public class CarrinhoController : ControllerBase
 {
-    private readonly CarrinhoService _service;
+    private readonly ICarrinhoService _service;
     private readonly IMapper _mapper;
     public CarrinhoController(IConfiguration config, IMapper mapper)
     {

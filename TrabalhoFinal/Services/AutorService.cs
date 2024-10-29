@@ -1,4 +1,6 @@
-﻿using FilMax.Entidade;
+﻿using F.Services.Interface;
+using Filmax.Services.Interface;
+using FilMax.Entidade;
 using FilMax.Repositorio;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FilMax.Services;
 
-public class AutorService
+public class AutorService : IAutorService
 {
     public AutorRepository repository { get; set; }
     public AutorService(string _config)

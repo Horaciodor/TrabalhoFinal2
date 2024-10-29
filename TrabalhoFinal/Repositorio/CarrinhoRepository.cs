@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Dapper.Contrib.Extensions;
+using Filmax.Repositorio.Interface;
 using FilMax.Entidade;
 using FilMax.Entidade.DTO;
 using FilMax.Repositorio;
@@ -12,11 +13,11 @@ using System.Threading.Tasks;
 
 namespace Filmax.Repositorio;
 
-public class CarrinhoRepository
+public class CarrinhoRepository : ICarrinhoRepository
 {
     private readonly string ConnectionString;
-    private readonly MangaRepository _repositoryManga;
-    private readonly ClienteRepository _repositoryCliente;
+    private readonly IMangaRepository _repositoryManga;
+    private readonly IClienteRepository _repositoryCliente;
     public CarrinhoRepository(string connectionString)
     {
         ConnectionString = connectionString;

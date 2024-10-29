@@ -1,5 +1,6 @@
 ﻿using Dapper.Contrib.Extensions;
 using Filmax.Entidade.DTO;
+using Filmax.Repositorio.Interface;
 using FilMax.Entidade;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace FilMax.Repositorio;
 
-public class ClienteRepository
+public class ClienteRepository : IClienteRepository
 {
     private readonly string ConnectionString;
     public ClienteRepository(string connectioString)

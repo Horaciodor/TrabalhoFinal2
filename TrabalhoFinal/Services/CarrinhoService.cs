@@ -6,12 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FilMax.Entidade.DTO;
+using Filmax.Repositorio.Interface;
+using Filmax.Services.Interface;
 
 namespace Filmax.Services
 {
-    public class CarrinhoService
+    public class CarrinhoService : ICarrinhoService
     {
-        public CarrinhoRepository repository { get; set; }
+        public ICarrinhoRepository repository { get; set; }
         public CarrinhoService(string _config)
         {
             repository = new CarrinhoRepository(_config);

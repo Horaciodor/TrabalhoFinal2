@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Filmax.Entidade.DTO;
+using Filmax.Services.Interface;
 using FilMax.Entidade;
 using FilMax.Entidade.DTO;
 using FilMax.Services;
@@ -11,7 +12,7 @@ namespace ApiTsuki.Controllers;
 [Route("[controller]")]
 public class ClienteController : ControllerBase
 {
-    private readonly ClienteService _service;
+    private readonly IClienteService _service;
     private readonly IMapper _mapper;
     public ClienteController(IConfiguration config, IMapper mapper)
     {
