@@ -1,5 +1,4 @@
-﻿using F.Services.Interface;
-using Filmax.Services.Interface;
+﻿using Filmax.Services.Interface;
 using FilMax.Entidade;
 using FilMax.Repositorio;
 using System;

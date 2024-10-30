@@ -23,7 +23,7 @@ namespace FrontEnd.useCases
         {
             HttpResponseMessage response = _client.PostAsJsonAsync("Endereco/adicionar-endereco", endereco).Result;
 
-            Endereco enderecoCadastrado = response.Content.ReadFromJsonAsync<Cliente>().Result;
+            Endereco enderecoCadastrado = response.Content.ReadFromJsonAsync<Endereco>().Result;
             return enderecoCadastrado;
         }
     }
