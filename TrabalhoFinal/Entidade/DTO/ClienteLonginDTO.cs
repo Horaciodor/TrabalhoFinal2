@@ -8,7 +8,7 @@ namespace Filmax.Entidade.DTO
 {
     public class ClienteLonginDTO
     {
-        public string Username { get; set; }
+        public string Apelido { get; set; }
         public string Senha { get; set; }
     }
 }
