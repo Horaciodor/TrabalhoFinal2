@@ -42,9 +42,9 @@ namespace FilMax.Services
                      CREATE TABLE IF NOT EXISTS Autors(
                      Id INTEGER PRIMARY KEY AUTOINCREMENT,
                      Nome TEXT NOT NULL,
-                     Idade INTERGER NOT NULL,
-                     Idmang INTERGER NOT NULL,
-                     NomeMang TEXT NOT NULL,
+                     Idade INTEGER NOT NULL,
+                     Idmang INTEGER NOT NULL,
+                     NomeMang TEXT NOT NULL
                      );";
 
             connection.Execute(commandoSQL);

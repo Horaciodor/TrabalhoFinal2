@@ -42,7 +42,7 @@ public class ClienteService : IClienteService
         List<Cliente> listUsuario = Listar();
         foreach (Cliente usuario in listUsuario)
         {
-            if (usuario.Apelido == usuarioLogin.Username
+            if (usuario.Apelido == usuarioLogin.Apelido
                 && usuario.Senha == usuarioLogin.Senha)
             {
                 return usuario;

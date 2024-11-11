@@ -1,4 +1,8 @@
+using Filmax.Repositorio.Interface;
+using Filmax.Services.Interface;
+using FilMax.Repositorio;
 using FilMax.Services;
+using FilMax.Services.Interface;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +12,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<IAutorService, AutorService>();
+builder.Services.AddScoped<IAutorRepository, AutorRepository>();
+builder.Services.AddScoped<IMangaService, MangaService>();
+builder.Services.AddScoped<IMangaRepository, MangaRepository>();
 builder.Services.AddSwaggerGen(options =>
 {
     // Informa ao Swagger para incluir o arquivo XML gerado
@@ -23,12 +33,14 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+var app = builder.Build();
+
 app.UseSwaggerUI(options =>
 {
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "Minha API v1");
 });
 InicializadorBD.Inicializar();
-var app = builder.Build();
+
 
 
 // Configure the HTTP request pipeline.

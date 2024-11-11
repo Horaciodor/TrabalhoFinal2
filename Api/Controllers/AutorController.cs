@@ -24,7 +24,7 @@ namespace FilMax.Controllers
         {
             _service.Adicionar(AutorDTO);
         }
-        [HttpPost("Listar-Autor")]
+        [HttpGet("Listar-Autor")]
         public List<Autor> ListarAluno()
         {
             return _service.Listar();

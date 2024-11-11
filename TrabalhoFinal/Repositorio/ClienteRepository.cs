@@ -49,7 +49,7 @@ public class ClienteRepository : IClienteRepository
         List<Cliente> listUsuario = Listar();
         foreach (Cliente usuario in listUsuario)
         {
-            if (usuario.Apelido == ClienteLogin.Username
+            if (usuario.Apelido == ClienteLogin.Apelido
                 && usuario.Senha == ClienteLogin.Senha)
             {
                 return usuario;
