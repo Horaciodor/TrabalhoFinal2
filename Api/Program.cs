@@ -11,13 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddScoped<IClienteService, ClienteService>();
-builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
-builder.Services.AddScoped<IAutorService, AutorService>();
-builder.Services.AddScoped<IAutorRepository, AutorRepository>();
-builder.Services.AddScoped<IMangaService, MangaService>();
-builder.Services.AddScoped<IMangaRepository, MangaRepository>();
+
 builder.Services.AddSwaggerGen(options =>
 {
     // Informa ao Swagger para incluir o arquivo XML gerado
@@ -32,7 +26,13 @@ builder.Services.AddSwaggerGen(options =>
         Description = "Testando descrição"
     });
 });
-
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<IAutorService, AutorService>();
+builder.Services.AddScoped<IAutorRepository, AutorRepository>();
+builder.Services.AddScoped<IMangaService, MangaService>();
+builder.Services.AddScoped<IMangaRepository, MangaRepository>();
 var app = builder.Build();
 
 app.UseSwaggerUI(options =>

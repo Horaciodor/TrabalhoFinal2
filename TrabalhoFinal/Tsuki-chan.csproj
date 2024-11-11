@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\Interface\MangaRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Repositorio\CarrinhoRepository.cs~RF34211bf6.TMP" />
   </ItemGroup>
 
