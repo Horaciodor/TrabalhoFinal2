@@ -8,15 +8,16 @@ using System.Threading.Tasks;
 using FilMax.Entidade.DTO;
 using Filmax.Repositorio.Interface;
 using Filmax.Services.Interface;
+using Microsoft.Extensions.Configuration;
 
 namespace Filmax.Services
 {
     public class CarrinhoService : ICarrinhoService
     {
         public ICarrinhoRepository repository { get; set; }
-        public CarrinhoService(string _config)
+        public CarrinhoService(ICarrinhoRepository carrinhoRepository)
         {
-            repository = new CarrinhoRepository(_config);
+            repository = carrinhoRepository;
         }
         public void Adicionar(Carrinho carrinho)
         {

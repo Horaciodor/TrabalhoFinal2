@@ -2,6 +2,7 @@
 using Filmax.Entidade.DTO;
 using Filmax.Repositorio.Interface;
 using FilMax.Entidade;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -14,9 +15,9 @@ namespace FilMax.Repositorio;
 public class ClienteRepository : IClienteRepository
 {
     private readonly string ConnectionString;
-    public ClienteRepository(string connectioString)
+    public ClienteRepository(IConfiguration config)
     {
-        ConnectionString = connectioString;
+        ConnectionString = config.GetConnectionString("DefaultConnection");
     }
     public void Adicionar(Cliente cliente)
     {

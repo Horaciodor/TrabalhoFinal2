@@ -14,11 +14,10 @@ public class ClienteController : ControllerBase
 {
     private readonly IClienteService _service;
     private readonly IMapper _mapper;
-    public ClienteController(IConfiguration config, IMapper mapper)
+    public ClienteController(IConfiguration config,IClienteService clienteService)
     {
         string _config = config.GetConnectionString("DefaultConnection");
-        _service = new ClienteService(_config);
-        _mapper = mapper;
+        _service = clienteService;
     }
     [HttpPost("adicionar-Cliente")]
     public void AdicionarCliente(Cliente clienteDTO)

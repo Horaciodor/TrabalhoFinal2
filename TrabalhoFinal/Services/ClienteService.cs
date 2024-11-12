@@ -1,7 +1,9 @@
 ﻿using Filmax.Entidade.DTO;
+using Filmax.Repositorio.Interface;
 using Filmax.Services.Interface;
 using FilMax.Entidade;
 using FilMax.Repositorio;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +14,10 @@ namespace FilMax.Services;
 
 public class ClienteService : IClienteService
 {
-    public ClienteRepository repository { get; set; }
-    public ClienteService(string _config)
+    public IClienteRepository repository { get; set; }
+    public ClienteService(IClienteRepository clienteRepository)
     {
-        repository = new ClienteRepository(_config);
+        repository = clienteRepository;
     }
     public void Adicionar(Cliente cliente)
     {

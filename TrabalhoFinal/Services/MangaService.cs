@@ -2,15 +2,16 @@
 using FilMax.Entidade;
 using FilMax.Repositorio;
 using FilMax.Services.Interface;
+using Microsoft.Extensions.Configuration;
 
 namespace FilMax.Services;
 
 public class MangaService: IMangaService
 {
-    public MangaRepository repository { get; set; }
-    public MangaService(string _config)
+    private readonly IMangaRepository repository;
+    public MangaService(IMangaRepository mangaRepository)
     {
-        repository = new MangaRepository(_config);
+        repository = mangaRepository;
     }
     public void Adicionar(Mangas manga)
     {

@@ -14,11 +14,10 @@ namespace FilMax.Controllers
     {
         private readonly ITsukiService service;
         private readonly IMapper _mapper;
-        public MangaController(IConfiguration config, IMapper mapper)
+        public MangaController(IConfiguration config,ITsukiService tsukiService)
         {
             string _config = config.GetConnectionString ("DefaultConnection");
-            service = new TsukiService(_config);
-            _mapper = mapper;
+            service = tsukiService;
         }
         [HttpPost("Adicionar-Manga")]
         public void AdicionarManga(Mangas m)

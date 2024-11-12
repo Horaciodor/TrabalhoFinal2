@@ -17,9 +17,9 @@ public class TsukiService : ITsukiService
 {
     public IMangaRepository _repository { get; set; }
 
-    public TsukiService(string _config)
+    public TsukiService(IMangaRepository mangaRepository)
     {
-        _repository = new MangaRepository(_config);
+        _repository = mangaRepository;
     }
 
     public void Adicionar(Mangas manga)

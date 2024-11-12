@@ -13,11 +13,10 @@ namespace FilMax.Controllers
     {
         private readonly IAutorService _service;
         private readonly IMapper _mapper;
-        public AutorController(IConfiguration config, IMapper mapper)
+        public AutorController(IConfiguration config,IAutorService autorService)
         {
             string _config = config.GetConnectionString("DefaultConnection");
-            _service = new AutorService(_config);
-            _mapper = mapper;
+            _service = autorService;
         }
         [HttpPost("adicionar-Autor")]
         public void AdicionarAutor(Autor AutorDTO)

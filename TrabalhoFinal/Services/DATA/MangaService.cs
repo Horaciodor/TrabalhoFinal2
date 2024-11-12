@@ -1,5 +1,6 @@
 ﻿using FilMax.Entidade;
 using FilMax.Repositorio;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Services.DATA;
 public class MangaService
 {
     public MangaRepository repository { get; set; }
-    public MangaService(string _config)
+    public MangaService(IConfiguration _config)
     {
         repository = new MangaRepository(_config);
     }

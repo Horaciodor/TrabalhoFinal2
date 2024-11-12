@@ -4,6 +4,7 @@ using Filmax.Repositorio.Interface;
 using FilMax.Entidade;
 using FilMax.Entidade.DTO;
 using FilMax.Repositorio;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -18,11 +19,11 @@ public class CarrinhoRepository : ICarrinhoRepository
     private readonly string ConnectionString;
     private readonly IMangaRepository _repositoryManga;
     private readonly IClienteRepository _repositoryCliente;
-    public CarrinhoRepository(string connectionString)
+    public CarrinhoRepository(IConfiguration config, IMangaRepository Mangarepo, IClienteRepository Clrepo)
     {
-        ConnectionString = connectionString;
-        _repositoryManga = new MangaRepository(connectionString);
-        _repositoryCliente = new ClienteRepository(connectionString);
+        ConnectionString = config.GetConnectionString("DefaultConnection");
+        _repositoryManga = Mangarepo;
+        _repositoryCliente = Clrepo;
     }
     public void Adicionar(Carrinho carrinho)
     {

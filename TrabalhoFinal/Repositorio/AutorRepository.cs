@@ -1,6 +1,7 @@
 ﻿using Dapper.Contrib.Extensions;
 using Filmax.Repositorio.Interface;
 using FilMax.Entidade;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -13,9 +14,9 @@ namespace FilMax.Repositorio;
 public class AutorRepository : IAutorRepository
 {
     private readonly string ConnectionString;
-    public AutorRepository(string connectionString)
+    public AutorRepository(IConfiguration config)
     {
-        ConnectionString = connectionString;
+        ConnectionString = config.GetConnectionString("DefaultConnection");
     }
     public void Adicionar(Autor autor)
     {

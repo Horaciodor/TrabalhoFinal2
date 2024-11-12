@@ -15,9 +15,9 @@ namespace FilMax.Repositorio
 
         public readonly string ConnectionString;
 
-        public MangaRepository(string connectionString)
+        public MangaRepository(IConfiguration config)
         {
-            ConnectionString = connectionString;
+            ConnectionString = config.GetConnectionString("DefaultConnection");
         }
 
         public void AdicionarManga(Mangas manga)

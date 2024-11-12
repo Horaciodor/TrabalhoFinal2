@@ -1,4 +1,5 @@
-﻿using Filmax.Services.Interface;
+﻿using Filmax.Repositorio.Interface;
+using Filmax.Services.Interface;
 using FilMax.Entidade;
 using FilMax.Repositorio;
 using System;
@@ -11,10 +12,10 @@ namespace FilMax.Services;
 
 public class AutorService : IAutorService
 {
-    public AutorRepository repository { get; set; }
-    public AutorService(string _config)
+    public IAutorRepository repository { get; set; }
+    public AutorService(IAutorRepository autorRepository)
     {
-        repository = new AutorRepository(_config);
+        repository = autorRepository;
     }
     public void Adicionar(Autor autor)
     {
