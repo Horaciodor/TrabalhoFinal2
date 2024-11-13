@@ -1,4 +1,6 @@
+using Filmax.Repositorio;
 using Filmax.Repositorio.Interface;
+using Filmax.Services;
 using Filmax.Services.Interface;
 using FilMax.Repositorio;
 using FilMax.Services;
@@ -33,6 +35,8 @@ builder.Services.AddScoped<IAutorService, AutorService>();
 builder.Services.AddScoped<IAutorRepository, AutorRepository>();
 builder.Services.AddScoped<IMangaService, MangaService>();
 builder.Services.AddScoped<IMangaRepository, MangaRepository>();
+builder.Services.AddScoped<ICarrinhoService, CarrinhoService>();
+builder.Services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();
 var app = builder.Build();
 
 app.UseSwaggerUI(options =>

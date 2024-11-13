@@ -4,5 +4,146 @@
         <name>ApiTsuki</name>
     </assembly>
     <members>
+        <member name="M:FilMax.Controllers.AutorController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Filmax.Services.Interface.IAutorService)">
+            <summary>
+            Construtor da classe com configuração e injeção do serviço
+            </summary>
+            <param name="config">Configuração do serviço</param>
+            <param name="autorService">Serviço de autores injetado</param>
+        </member>
+        <member name="M:FilMax.Controllers.AutorController.AdicionarAutor(FilMax.Entidade.Autor)">
+            <summary>
+            Adiciona um novo autor ao sistema
+            </summary>
+            <param name="AutorDTO">Objeto Autor que contém as informações do autor a ser adicionado</param>
+            <returns>Retorna uma resposta de sucesso ou erro</returns>
+        </member>
+        <member name="M:FilMax.Controllers.AutorController.ListarAluno">
+            <summary>
+            Lista todos os autores cadastrados
+            </summary>
+            <returns>Retorna uma lista de autores ou uma resposta de erro</returns>
+        </member>
+        <member name="M:FilMax.Controllers.AutorController.EditarUsuario(FilMax.Entidade.Autor)">
+            <summary>
+            Edita as informações de um autor existente
+            </summary>
+            <param name="a">Objeto Autor contendo as informações atualizadas do autor</param>
+            <returns>Retorna uma resposta de sucesso ou erro</returns>
+        </member>
+        <member name="M:FilMax.Controllers.AutorController.DeletarUsuario(System.Int32)">
+            <summary>
+            Deleta um autor existente do sistema
+            </summary>
+            <param name="id">Identificador único do autor a ser deletado</param>
+            <returns>Retorna uma resposta de sucesso ou erro</returns>
+        </member>
+        <member name="M:FilMax.Controllers.MangaController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Filmax.Aplicação.ITsukiService)">
+            <summary>
+            Construtor da classe MangaController com configuração e injeção do serviço
+            </summary>
+            <param name="config">Configuração para conexão com o banco de dados</param>
+            <param name="tsukiService">Serviço de mangá injetado</param>
+        </member>
+        <member name="M:FilMax.Controllers.MangaController.AdicionarManga(FilMax.Entidade.Mangas)">
+            <summary>
+            Adiciona um novo mangá ao sistema
+            </summary>
+            <param name="m">Objeto Mangas que contém as informações do mangá a ser adicionado</param>
+        </member>
+        <member name="M:FilMax.Controllers.MangaController.RemoverManga(System.Int32)">
+            <summary>
+            Remove um mangá existente do sistema
+            </summary>
+            <param name="id">Identificador único do mangá a ser removido</param>
+        </member>
+        <member name="M:FilMax.Controllers.MangaController.ListarManga">
+            <summary>
+            Lista todos os mangás cadastrados no sistema
+            </summary>
+            <returns>Retorna uma lista de todos os mangás</returns>
+        </member>
+        <member name="M:FilMax.Controllers.MangaController.EditarManga(FilMax.Entidade.Mangas)">
+            <summary>
+            Edita as informações de um mangá existente
+            </summary>
+            <param name="m">Objeto Mangas contendo as informações atualizadas do mangá</param>
+        </member>
+        <member name="M:ApiTsuki.Controllers.CarrinhoController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Filmax.Services.Interface.ICarrinhoService)">
+            <summary>
+            Construtor da classe CarrinhoController com configuração e injeção do serviço
+            </summary>
+            <param name="config">Configuração para conexão com o banco de dados</param>
+            <param name="carrinhoService">Serviço de carrinho injetado</param>
+        </member>
+        <member name="M:ApiTsuki.Controllers.CarrinhoController.AdicionarCarrinho(FilMax.Entidade.Carrinho)">
+            <summary>
+            Adiciona um novo carrinho ao sistema
+            </summary>
+            <param name="carrinhoDTO">Objeto Carrinho que contém as informações do carrinho a ser adicionado</param>
+        </member>
+        <member name="M:ApiTsuki.Controllers.CarrinhoController.ListarAluno">
+            <summary>
+            Lista todos os carrinhos cadastrados
+            </summary>
+            <returns>Retorna uma lista de todos os carrinhos</returns>
+        </member>
+        <member name="M:ApiTsuki.Controllers.CarrinhoController.ListarCarrinhoDoUsuario(System.Int32)">
+            <summary>
+            Lista os carrinhos associados a um cliente específico
+            </summary>
+            <param name="usuarioId">ID do usuário para listar os carrinhos</param>
+            <returns>Retorna uma lista de carrinhos do cliente especificado</returns>
+        </member>
+        <member name="M:ApiTsuki.Controllers.CarrinhoController.EditarCarrinho(FilMax.Entidade.Carrinho)">
+            <summary>
+            Edita as informações de um carrinho existente
+            </summary>
+            <param name="p">Objeto Carrinho contendo as informações atualizadas</param>
+        </member>
+        <member name="M:ApiTsuki.Controllers.CarrinhoController.DeletarCarrinho(System.Int32)">
+            <summary>
+            Deleta um carrinho existente do sistema
+            </summary>
+            <param name="id">Identificador único do carrinho a ser deletado</param>
+        </member>
+        <member name="M:ApiTsuki.Controllers.ClienteController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Filmax.Services.Interface.IClienteService)">
+            <summary>
+            Construtor da classe ClienteController com configuração e injeção do serviço
+            </summary>
+            <param name="config">Configuração para conexão com o banco de dados</param>
+            <param name="clienteService">Serviço de cliente injetado</param>
+        </member>
+        <member name="M:ApiTsuki.Controllers.ClienteController.AdicionarCliente(FilMax.Entidade.Cliente)">
+            <summary>
+            Adiciona um novo cliente ao sistema
+            </summary>
+            <param name="clienteDTO">Objeto Cliente contendo as informações do cliente a ser adicionado</param>
+        </member>
+        <member name="M:ApiTsuki.Controllers.ClienteController.FazerLogin(Filmax.Entidade.DTO.ClienteLonginDTO)">
+            <summary>
+            Realiza o login de um cliente com base nas credenciais fornecidas
+            </summary>
+            <param name="usuarioLogin">Objeto ClienteLoginDTO contendo as informações de login do cliente</param>
+            <returns>Retorna o cliente se as credenciais estiverem corretas</returns>
+        </member>
+        <member name="M:ApiTsuki.Controllers.ClienteController.ListarCliente">
+            <summary>
+            Lista todos os clientes cadastrados no sistema
+            </summary>
+            <returns>Retorna uma lista de todos os clientes</returns>
+        </member>
+        <member name="M:ApiTsuki.Controllers.ClienteController.EditarCliente(FilMax.Entidade.Cliente)">
+            <summary>
+            Edita as informações de um cliente existente
+            </summary>
+            <param name="p">Objeto Cliente contendo as informações atualizadas do cliente</param>
+        </member>
+        <member name="M:ApiTsuki.Controllers.ClienteController.DeletarCliente(System.Int32)">
+            <summary>
+            Deleta um cliente existente do sistema
+            </summary>
+            <param name="id">Identificador único do cliente a ser deletado</param>
+        </member>
     </members>
 </doc>
