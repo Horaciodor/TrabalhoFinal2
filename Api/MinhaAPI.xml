@@ -38,7 +38,7 @@
             <param name="id">Identificador único do autor a ser deletado</param>
             <returns>Retorna uma resposta de sucesso ou erro</returns>
         </member>
-        <member name="M:FilMax.Controllers.MangaController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Filmax.Aplicação.ITsukiService)">
+        <member name="M:FilMax.Controllers.MangaController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,FilMax.Services.Interface.IMangaService)">
             <summary>
             Construtor da classe MangaController com configuração e injeção do serviço
             </summary>

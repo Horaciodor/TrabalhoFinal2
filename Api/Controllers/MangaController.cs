@@ -3,6 +3,7 @@ using Filmax.Aplicação;
 using FilMax.Aplicação;
 using FilMax.Entidade;
 using FilMax.Services;
+using FilMax.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FilMax.Controllers
@@ -11,7 +12,7 @@ namespace FilMax.Controllers
     [Route("[controller]")]
     public class MangaController : ControllerBase
     {
-        private readonly ITsukiService service;
+        private readonly IMangaService service;
         private readonly IMapper _mapper;
 
         /// <summary>
@@ -19,7 +20,7 @@ namespace FilMax.Controllers
         /// </summary>
         /// <param name="config">Configuração para conexão com o banco de dados</param>
         /// <param name="tsukiService">Serviço de mangá injetado</param>
-        public MangaController(IConfiguration config, ITsukiService tsukiService)
+        public MangaController(IConfiguration config, IMangaService tsukiService)
         {
             string _config = config.GetConnectionString("DefaultConnection");
             service = tsukiService;
@@ -52,7 +53,7 @@ namespace FilMax.Controllers
         {
             try
             {
-                service.Remover(id);
+                service.RemoverManga(id);
                 return Ok("Manga removido com sucesso.");
             }
             catch (Exception ex)
@@ -70,7 +71,7 @@ namespace FilMax.Controllers
         {
             try
             {
-                var mangas = service.Listar();
+                var mangas = service.ListarManga();
                 return Ok(mangas);
             }
             catch (Exception ex)
@@ -88,7 +89,7 @@ namespace FilMax.Controllers
         {
             try
             {
-                service.Editar(m);
+                service.EditarManga(m);
                 return Ok("Manga editado com sucesso.");
             }
             catch (Exception ex)
